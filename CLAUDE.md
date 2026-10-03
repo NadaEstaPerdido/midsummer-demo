@@ -4,7 +4,7 @@ Demo de **solo la portada (Inicio)** del sitio que NEP IA cotizó a Midsummer Co
 
 ## Qué construir (carpeta `site/`, HTML + CSS + JS estático, sin dependencias de build)
 - Una sola página, en español, para celular y computador.
-- Referencia visual que dio el cliente: https://midsummer.se/en/ (casa matriz en Suecia). El cliente exige integrar el manual de identidad visual de la casa matriz; no lo tenemos, así que imita la línea de esa web (colores, tipografía, tono). No copies textos ni imágenes con derechos: usa imágenes de relleno libres o bloques de color.
+- Lee primero `REFERENCIA-MARCA.md` (colores, tipografía y estructura medidos en la web real de la casa matriz, con capturas `ref-*.jpg`) y `REQUISITOS-CLIENTE.md` (lo que pidió el cliente). La web de referencia es https://midsummer.se/en/, pero este entorno no la abre: usa esos archivos, no la memoria. La demo debe verse clara y menta, no oscura. No copies logo, fotos ni textos completos.
 - Menú, con estos nombres exactos: Inicio, Tecnología, Proyectos en Colombia, Instaladores y Aliados, Red de Instaladores Autorizados, Contacto.
 - La portada muestra un adelanto de cada sección: héroe con propuesta de valor, Tecnología (3 bloques), Proyectos en Colombia (3 tarjetas), Instaladores y Aliados (llamado a unirse), Red de Instaladores Autorizados (mapa simple y filtros de mentira), formulario de contacto avanzado (no envía nada; muestra que cada mensaje llegaría al asesor según tipo de consulta y ciudad).
 - Un enlace visible a Midsummer Suecia (midsummer.se). El cliente aprobó los enlaces cruzados entre ambos sitios, pero el sitio de Colombia es independiente: nada incrustado ni sincronizado con Suecia.
