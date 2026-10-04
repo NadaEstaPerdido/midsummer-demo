@@ -2,7 +2,7 @@
 
 Propuesta de NEP IA: solo la portada (Inicio), en HTML + CSS + JS estático, sin build. El sitio final se construye en WordPress.
 
-Todo el contenido de proyectos, cifras, ciudades, instaladores y asesores es **de ejemplo**.
+Todo el contenido de proyectos, cifras, ciudades, instaladores y asesores es **de ejemplo**. Colores, tipografía y estructura siguen `REFERENCIA-MARCA.md` (medidos en midsummer.se); los datos de producto de la casa matriz van marcados «por validar con Midsummer Colombia».
 
 ## Verla en local
 
@@ -25,7 +25,7 @@ python3 -m http.server 8080
 - `noindex,nofollow` en la página, `robots.txt` que bloquea todo y encabezado `X-Robots-Tag`.
 - Marca de agua diagonal fija: «Propuesta de NEP IA para Midsummer Colombia · Demo, no apta para uso».
 - Vence: desde el 2 de noviembre de 2026 (hora Colombia), o sea pasada la fecha 2026-11-01, la página solo muestra «Esta propuesta venció. Escríbenos: nepiapro3000@gmail.com». Sin JavaScript no se muestra nada.
-- Sin fotos ni fuentes en el repo: las imágenes son SVG y bloques de color.
+- Sin fotos ni fuentes en el repo: las imágenes son SVG y degradados; la letra (Montserrat, en lugar de Metropolis) se carga de Google Fonts.
 
 ## Capturas
 
