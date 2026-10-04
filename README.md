@@ -25,7 +25,13 @@ python3 -m http.server 8080
 - `noindex,nofollow` en la página, `robots.txt` que bloquea todo y encabezado `X-Robots-Tag`.
 - Marca de agua diagonal fija: «Propuesta de NEP IA para Midsummer Colombia · Demo, no apta para uso».
 - Vence: desde el 2 de noviembre de 2026 (hora Colombia), o sea pasada la fecha 2026-11-01, la página solo muestra «Esta propuesta venció. Escríbenos: nepiapro3000@gmail.com». Sin JavaScript no se muestra nada.
-- Sin fotos ni fuentes en el repo: las imágenes son SVG y degradados; la letra (Montserrat, en lugar de Metropolis) se carga de Google Fonts.
+- Sin fuentes en el repo: la letra (Montserrat, en lugar de Metropolis) se carga de Google Fonts.
+
+## Contenido de terceros
+
+- Logo: el original de Midsummer, recortado en baja resolución de `ref-2-productos.jpg` (`site/img/`). Se reemplaza por el del manual de marca cuando el cliente lo entregue.
+- Mapa: departamentos de Colombia de [Natural Earth](https://www.naturalearthdata.com/) (dominio público), simplificados a SVG dentro de `index.html`.
+- Video: YouTube `XDlEqRG36_4`, incrustado con `youtube-nocookie.com`; el reproductor solo carga cuando el visitante hace clic.
 
 ## Capturas
 

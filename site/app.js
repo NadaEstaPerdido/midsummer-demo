@@ -20,11 +20,12 @@
 
   // ---------- Red de instaladores (ejemplo) ----------
   var ciudades = {
-    'Barranquilla': { x: 142, y: 34 },
-    'Medellín':     { x: 112, y: 128 },
-    'Bucaramanga':  { x: 172, y: 108 },
-    'Bogotá':       { x: 156, y: 168 },
-    'Cali':         { x: 96,  y: 202 }
+    // Coordenadas reales de cada ciudad, proyectadas igual que el mapa de Natural Earth
+    'Barranquilla': { x: 147.8, y: 63.6 },
+    'Medellín':     { x: 124.3, y: 205.2 },
+    'Bucaramanga':  { x: 197.9, y: 178.9 },
+    'Bogotá':       { x: 169.5, y: 251.2 },
+    'Cali':         { x: 95.8,  y: 288.9 }
   };
   var instaladores = [
     { nombre: 'Instalador Ejemplo A', ciudad: 'Bogotá',       tipos: ['residencial', 'comercial'] },
@@ -96,6 +97,21 @@
   filtroTipo.addEventListener('change', filtrar);
   filtrar();
 
+  // ---------- Video: el reproductor de YouTube solo carga al hacer clic ----------
+  var marcoVideo = document.getElementById('video-marco');
+  var idVideo = marcoVideo.getAttribute('data-id');
+  // Miniatura de YouTube; si no carga, queda el degradado verde de respaldo.
+  marcoVideo.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + idVideo + '/hqdefault.jpg), linear-gradient(135deg, #2c5a35, #00330b)';
+  marcoVideo.querySelector('.video-portada').addEventListener('click', function () {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + idVideo + '?autoplay=1&rel=0';
+    iframe.title = 'Video de Midsummer';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    marcoVideo.innerHTML = '';
+    marcoVideo.appendChild(iframe);
+  });
+
   // ---------- Formulario con enrutamiento (demo) ----------
   var regiones = {
     'Bogotá': 'Centro-Oriente',
@@ -128,7 +144,7 @@
 
     if (!tipo || !ciudad) {
       rutaAsesor.textContent = !tipo && !ciudad
-        ? 'Elige tipo de consulta y ciudad'
+        ? 'Elige el tipo de consulta y la ciudad'
         : (!tipo ? 'Falta el tipo de consulta' : 'Falta la ciudad');
       rutaDetalle.textContent = 'El sitio enruta cada formulario automáticamente.';
       return null;
@@ -136,7 +152,7 @@
     var equipo = equipos[tipo];
     var region = equipo.regional ? regiones[ciudad] : 'Nacional';
     rutaAsesor.textContent = equipo.cargo + ' · ' + (region === 'Nacional' ? 'equipo nacional' : 'región ' + region);
-    rutaDetalle.textContent = 'Asesor de ejemplo. Recibe el mensaje con copia al CRM y responde en horario hábil.';
+    rutaDetalle.textContent = 'Asesor de ejemplo: recibe el mensaje con copia al CRM y responde en horario hábil.';
     return rutaAsesor.textContent;
   }
   fTipo.addEventListener('change', enrutar);
@@ -154,7 +170,7 @@
     var destino = enrutar();
     if (!destino) {
       aviso.classList.remove('ok');
-      aviso.textContent = 'Elige tipo de consulta y ciudad para ver a quién llegaría.';
+      aviso.textContent = 'Elige el tipo de consulta y la ciudad para ver a quién llegaría.';
       return;
     }
     aviso.classList.add('ok');
